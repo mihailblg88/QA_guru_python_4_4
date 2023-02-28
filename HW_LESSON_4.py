@@ -1,6 +1,6 @@
 import random
 import math
-math.pi
+
 
 def test_greeting():
     name = "Анна"
@@ -18,13 +18,11 @@ def test_rectangle():
     a = 10
     b = 20
     # TODO сосчитайте периметр
-    perimeter = (a+b)*2
+    perimeter = (a + b) * 2
     assert perimeter == 60
 
-
-
     # TODO сосчитайте площадь
-    area = a*b
+    area = a * b
     assert area == 200
 
 
@@ -34,11 +32,11 @@ def test_circle():
     """
     r = 23
     # TODO сосчитайте площадь
-    area = math.pi*r**2
+    area = math.pi * r ** 2
     assert area == 1661.9025137490005
 
     # TODO сосчитайте длину окружности
-    length = 2*math.pi*r
+    length = 2 * math.pi * r
     assert length == 144.51326206513048
 
 
@@ -48,9 +46,8 @@ def test_random_list():
     """
 
     # TODO создайте список
-    l = []
-    for i in (range(0, 10)):
-        l.append(random.randint(1, 100))
+    l = [random.randint(0, 100) for i in range(10)]
+    l.sort()
     assert len(l) == 10
     assert l[0] < l[-1]
 
@@ -67,7 +64,6 @@ def test_unique_elements():
     assert l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-
 def test_dicts():
     """
     Создайте словарь из двух списков.
@@ -78,8 +74,8 @@ def test_dicts():
     first = ["a", "b", "c", "d", "e"]
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
-    d = {first: dict for first, second in zip(first, second) }
-
+    d = dict(zip(first, second))
 
     assert isinstance(d, dict)
     assert len(d) == 5
+    print(d)
